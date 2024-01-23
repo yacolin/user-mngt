@@ -7,7 +7,6 @@ import com.example.usermngt.service.Create;
 import com.example.usermngt.service.TeamService;
 import com.example.usermngt.util.FormValidate;
 import jakarta.persistence.criteria.Predicate;
-import jakarta.validation.Valid;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -23,10 +22,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/")
-public class TeamsController {
+public class TeamController {
     private final TeamService teamService;
 
-    public TeamsController(TeamService teamService) {
+    public TeamController(TeamService teamService) {
         this.teamService = teamService;
     }
 

@@ -20,6 +20,13 @@ public class UserInfoEntity {
     private String hobbies; // 逗号分隔的字符串
     private String tags;
 
+    // 假设 database_column 是一个存储 1/0 表示布尔值的 tinyint 或 bit 类型的列
+    @Column(name = "database_column")
+    private boolean flag;
+
+    @Column(columnDefinition = "TINYINT(1) DEFAULT 0")
+    private Byte status;
+
 
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

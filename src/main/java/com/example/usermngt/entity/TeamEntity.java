@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -26,11 +27,12 @@ public class TeamEntity {
 
     private String logo;
 
-    private char part; // e or w
+    @Column(columnDefinition = "char(1)")
+    private Character part; // e or w
 
     private String divide; // 赛事分区
 
-    @Column(columnDefinition = "INT DEFAULT 0")
+    @Column(columnDefinition = "TINYINT(0) DEFAULT 0")
     private int champions; // 冠军个数
 
 
